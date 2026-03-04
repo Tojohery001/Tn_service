@@ -69,13 +69,26 @@
       const name = $("#name")?.value?.trim() || "";
       const email = $("#email")?.value?.trim() || "";
       const message = $("#message")?.value?.trim() || "";
+      const feedback = $("#formMessage");
+
+      if (!name || !email || !message) {
+        if (feedback) feedback.textContent = "Veuillez remplir tous les champs.";
+        return;
+      }
+
+      if (feedback) {
+        feedback.textContent = "Préparation du mail...";
+      }
 
       const subject = encodeURIComponent("Demande de devis - TN Service Madagascar");
       const body = encodeURIComponent(
         `Nom: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n---\nEnvoyé depuis le site TN Service Madagascar`
       );
       const to = "tnservicesmdg@gmail.com";
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      // slight delay to allow feedback to display before navigation
+      setTimeout(() => {
+        window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+      }, 250);
     });
   }
 })();

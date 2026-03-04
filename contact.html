@@ -16,7 +16,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta name="description" content="Contactez TN Service Madagascar pour maintenance informatique, réseau, création site web ou publicité Meta Ads à Antananarivo.">
 
-<link rel="stylesheet" href="/Tn_service/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -125,22 +125,24 @@ Contactez TN Service pour un devis ou une assistance informatique.
 
 <h2>Envoyer un message</h2>
 
-<form>
+<form id="contactForm">
 
-<label>Nom</label>
-<input type="text" placeholder="Votre nom">
+<label for="name">Nom</label>
+<input id="name" type="text" placeholder="Votre nom" required>
 
-<label>Email</label>
-<input type="email" placeholder="Votre email">
+<label for="email">Email</label>
+<input id="email" type="email" placeholder="Votre email" required>
 
-<label>Message</label>
-<textarea placeholder="Votre message"></textarea>
+<label for="message">Message</label>
+<textarea id="message" placeholder="Votre message" required></textarea>
 
 <button class="btn primary" type="submit">
 
 Envoyer
 
 </button>
+
+<div id="formMessage" role="status" aria-live="polite" style="margin-top:12px;color:var(--success);"></div>
 
 </form>
 
@@ -291,7 +293,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
 </script>
 
-<script src="/Tn_service/js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 

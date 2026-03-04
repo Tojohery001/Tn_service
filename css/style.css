@@ -1,5 +1,5 @@
 ﻿/* ==========================================================
-   TN Service Madagascar — Marketing UI (2026)
+   TN Service Madagascar  Marketing UI (2026)
    Modern, clean, conversion-first. Works with existing HTML.
    ========================================================== */
 
@@ -421,64 +421,4 @@ input:focus, textarea:focus{border-color:rgba(78,161,255,0.45)}
   .projects{grid-template-columns:1fr}
   .testimonials{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
-}
-
-/* ===== Scroll reveal (marketing) ===== */
-.reveal{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s ease, transform .7s ease;
-  will-change: opacity, transform;
-}
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Variantes */
-.reveal.reveal-left{ transform: translateX(-18px); }
-.reveal.reveal-right{ transform: translateX(18px); }
-.reveal.reveal-zoom{ transform: scale(.98); }
-
-.reveal.reveal-left.is-visible,
-.reveal.reveal-right.is-visible{
-  transform: translateX(0);
-}
-.reveal.reveal-zoom.is-visible{
-  transform: scale(1);
-}
-
-/* Respect des utilisateurs (accessibilité) */
-@media (prefers-reduced-motion: reduce){
-  .reveal{ opacity: 1 !important; transform:none !important; transition:none !important; }
-}
-
-/* ===== Stagger reveal (one by one) ===== */
-.reveal{
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s ease, transform .7s ease;
-  will-change: opacity, transform;
-}
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Delay variable for stagger */
-.reveal[data-delay]{
-  transition-delay: var(--d, 0ms);
-}
-
-/* Variants */
-.reveal.reveal-left{ transform: translateX(-18px); }
-.reveal.reveal-right{ transform: translateX(18px); }
-.reveal.reveal-zoom{ transform: scale(.98); }
-
-.reveal.reveal-left.is-visible,
-.reveal.reveal-right.is-visible{ transform: translateX(0); }
-.reveal.reveal-zoom.is-visible{ transform: scale(1); }
-
-@media (prefers-reduced-motion: reduce){
-  .reveal{ opacity: 1 !important; transform:none !important; transition:none !important; }
 }

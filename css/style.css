@@ -397,10 +397,61 @@ input:focus, textarea:focus{border-color:rgba(78,161,255,0.45)}
   width:10px;height:10px;border-radius:50%;
   background:var(--success);
   box-shadow:0 0 0 6px rgba(37,211,102,0.18);
+/* ---- Animations ---- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@media (max-width:520px){
-  .wa-float span.label{display:none}
-  .wa-float{padding:12px}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-on-scroll.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn:hover {
+  animation: pulse 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 80px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ---- Stats ---- */
+.stats {
+  padding: 60px 0;
+  background: var(--panel);
+}
+
+.stat .number {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.stat .label {
+  font-size: 14px;
+  color: var(--muted);
 }
 
 /* ---- Responsive ---- */

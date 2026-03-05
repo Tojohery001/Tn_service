@@ -40,7 +40,7 @@ body{
     radial-gradient(800px 520px at 50% 105%, rgba(78,161,255,0.12), transparent 60%),
     var(--bg);
   color:var(--text);
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:Georgia,'Times New Roman',serif;
   line-height:1.55;
 }
 
